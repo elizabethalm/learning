@@ -1,4 +1,4 @@
-Estudos de Python 🐍 
+# Estudos de Python 🐍 
 
 Esta pasta reúne os exercícios e anotações do meu aprendizado em Python.
 
