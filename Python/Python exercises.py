@@ -117,3 +117,203 @@ if distancia <= 200:
   print('O preço da sua passagem é R${:.2f}'.format(distancia * 0.50))
 else:
   print('O preço da sua passagem é R${:.2f}'.format(distancia * 0.45))
+
+# 📝 Exercício 13: Solicita ao usuário um CPF ou CNPJ, remove caracteres não numéricos e retorna apenas os dígitos
+
+documento= input("Digite o CPF ou CNPJ: ")
+documento_limpo= ''.join(filter(str.isdigit, documento))
+print(f"Documento limpo: {documento_limpo}")
+
+# 📝 Exercício 14: Cálculo de valor da parcela de um financiamento de imóvel e verificação de aprovação com base em até 30% do salário do usuário
+
+valor_casa= float(input('Qual é o valor do imóvel? R$'))
+valor_salario= float(input('Qual é o seu salário? R$'))
+tempo= int(input('Em quantos anos você quer financiar? R$'))
+valor_parcela= valor_casa / (tempo * 12)
+valor_mínimo= valor_salario * 30/100
+print('Para pagar uma casa de R${:.2f} em {} anos'.format(valor_casa, tempo))
+print('A prestação será de R${:.2f}'.format(valor_parcela))
+
+if valor_parcela <= valor_mínimo:
+  print('Empréstimo pode ser concedido.')
+else:
+  print('Empréstimo negado.')
+
+# 📝 Exercício 15: Conversão um número inteiro digitado pelo usuário para binário, octal ou hexadecimal, de acordo com a opção escolhida
+
+num= int(input('Digite um número inteiro: '))
+print('''Escolha uma das bases para conversão:
+[1] converter para binário
+[2] converter para octal
+[3] convertar para hexadecimal''')
+opção= int(input('Sua opção: '))
+if opção == 1:
+  print('{} convertido para binário é igual a {}'.format(num, bin(num)[2:]))
+elif opção == 2:
+  print('{} convertido para octal é igual a {}'.format(num, oct(num)[2:]))
+elif opção == 3:
+  print('{} convertido para hexadecimal é igual a {}'.format(num, hex(num)[2:]))
+else:
+  print('Opção inválida, tente novamente')
+
+# 📝 Exercício 16: Comparação de dois números inteiros digitados pelo usuário e informa qual é maior ou se são iguais
+
+num1= int(input('Digite o primeiro valor: '))
+num2= int(input('Digite o segundo valor: '))
+if num1 > num2:
+  print('Valor 1 é maior do que o Valor 2')
+elif num2 > num1:
+  print('Valor 2 é maior do que o Valor 1')
+else:
+  print('Os valores são iguais')
+
+# 📝 Exercício 17: Cálculo da idade do usuário em 2025 e verifica a situação em relação ao alistamento militar obrigatório
+
+ano_nascimento= int(input('Digite o ano de nascimento: '))
+idade= 2025 - ano_nascimento
+print ('Quem nasceu em {} tem {} anos em 2025'.format(ano_nascimento, idade))
+tempo_faltante= 18 - idade
+if idade < 18:
+  print ('Ainda faltam {} anos para o alistamento'.format(tempo_faltante))
+  print ('Seu alistamento será em {}'.format(ano_nascimento + 18))
+elif idade > 18:
+  print ('Você deveria ter se alistado a {} anos'.format(tempo_faltante * -1))
+  print ('Seu alistamento foi em {}'.format(ano_nascimento + 18))
+else:
+  print ('Você tem 18 anos e deve se alistar imediatamente')
+
+# 📝 Exercício 18: Lê duas notas, calcula a média e informa se o aluno foi aprovado, em recuperação ou reprovado
+
+nota1= float(input('Digite a primeira nota: '))
+nota2= float(input('Digite a segunda nota: '))
+média= (nota1 + nota2) / 2
+print('A média entre {} e {} é igual a {}'.format(nota1, nota2, média))
+if média < 5:
+  print('Aluno reprovado')
+elif média > 5 and média < 6.9:
+  print ('Aluno em recuperação')
+else:
+  print ('Aluno aprovado')
+
+# 📝 Exercício 19: Cálculo a idade do usuário e classifica em categorias esportivas
+
+ano= int(input('Digite seu ano de nascimento: '))
+idade= 2025 - ano
+print ('Quem nasceu em {} tem {} anos'.format(ano, idade))
+if idade <= 9:
+  print('Você faz parte da categora MIRIM')
+elif idade > 9 and idade <= 14:
+  print('Você faz parte da categoria INFANTIL')
+elif idade > 14 and idade <= 19:
+  print('Você faz parte da categoria JUNIOR')
+elif idade > 19 and idade <= 25:
+  print('Você faz parte da categoria SÊNIOR')
+else:
+  print('Você faz parte da categoria MASTER')
+
+# 📝 Exercício 20: Cálculo automático da idade do usuário com base no ano de nascimento e o ano atual
+
+from datetime import date
+atual= date.today().year
+nasc= int(input('Digite seu ano de nascimento: '))
+idade= atual - nasc
+print('Quem nasceu em {} tem {} anos em {}'.format(nasc, idade, atual))
+
+# 📝 Exercício 21: Verifica se três segmentos podem formar um triângulo e, se sim, identifica se é equilátero, isósceles ou escaleno
+
+r1= float(input('Primeiro segmento: '))
+r2= float(input('Segundo segmento: '))
+r3= float(input('Terceiro segmento: '))
+if  r1 < r2 + r3 and r2 < r1 + r3 and r3 < r1 + r2:
+  print('Os segmentos acima podem formar um triângulo', end=' ')
+  if r1 == r2 == r3:
+   print('equilátero')
+  elif r1 != r2 != r3 != r1:
+    print('escaleno')
+  else:
+    print('isósceles')
+else:
+  print('Os segmentos acima não podem formar um triângulo')
+
+# 📝 Exercício 22: Cálculo e classificação de IMC
+
+peso= float(input('Digite seu peso: '))
+altura= float(input('Digite sua alttura: '))
+imc= peso / (altura * altura)
+print('Seu IMC é {:.2f}'.format(imc))
+if imc <= 18.5:
+  print('Abaixo do peso')
+elif imc > 18.5 and imc <= 25:
+  print('Peso ideal')
+elif imc > 25 and imc <= 30:
+  print('Sobrepeso')
+elif imc > 30 and imc <= 40:
+  print('Obesidade')
+else:
+  print('Obesidade mórbida')
+
+# 📝 Exercício 23: Cálculo de valor final da compra de acordo com a forma de pagamento escolhida
+
+preço= float(input('Preço das compras: R$'))
+print ('''FORMA DE PAGAMENTO:
+[1] À vista no dinheiro ou cheque
+[2] À vista no cartão
+[3] 2x no cartão
+[4] 3x ou mais no cartão''')
+opção= int(input('Qual é a opção? '))
+if opção == 1:
+  total= preço - (preço * 10/100)
+elif opção ==2:
+  total= preço - (preço * 5/100)
+elif opção == 3:
+  total = preço
+  parcela = total / 2
+  print('Sua compra será parcelada em 2x de R${:.2f}'.format(parcela))
+elif opção == 4:
+  total = preço + (preço * 20/100)
+  total_parcelas= int(input('Quantas parcelas? '))
+  parcela= total / total_parcelas
+  print('Sua compra será parcelada em {}x de R${:.2f}'.format(total_parcelas, parcela))
+else:
+  total= 0
+  print('Opção inválida, tente novamente')
+print('Sua compra de {:.2f} vai custar {:.2f} no final'.format(preço,total))
+
+# 📝 Exercício 24: Simulação do jogo Pedra, Papel e Tesoura, escolhendo aleatoriamente a jogada do computador e comparando com a jogada do jogador
+
+from random import randint
+itens= ('Pedra', 'Papel', 'Tesoura')
+computador= randint(0, 2)
+print('''Suas opções:
+[0] Pedra
+[1] Papel
+[2] Tesoura''')
+jogador= int(input('Qual é a sua jogada? '))
+print('-='*11)
+if jogador < 0 or jogador > 2:
+  print('Jogada inválida')
+else:
+  print('O computador jogou {}'.format(itens[computador]))
+  print('O jogador jogou {}'.format(itens[jogador]))
+print('-='*11)
+if computador == 0:
+  if jogador == 0:
+    print('Empate')
+  elif jogador == 1:
+    print('Jogador vence')
+  elif jogador == 2:
+    print ('Computador vence')
+elif computador == 1:
+  if jogador == 0:
+    print('Computador vence')
+  elif jogador == 1:
+    print('Empate')
+  elif jogador == 2:
+    print('Jogador vence')
+elif computador == 2:
+  if jogador == 0:
+    print('Jogador vence')
+  elif jogador == 1:
+    print('Computador vence')
+  elif jogador == 2:
+    print('Empate')
