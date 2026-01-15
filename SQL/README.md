@@ -6,10 +6,10 @@ Estou usando a plataforma SQLBolt para revisar alguns conceitos e consolidar a b
 
 Tópicos estudados:
 
-• Consultas básicas e agrupamentos (SELECT, WHERE, ORDER BY, GROUP BY);
-• Filtros e operadores lógicos;
-• Funções agregadas;
-• JOINS;
-• Subqueries;
-• Window functions;
-• Boas práticas.
+- Consultas básicas e agrupamentos (SELECT, WHERE, ORDER BY, GROUP BY);
+- Filtros e operadores lógicos;
+- Funções agregadas;
+- JOINS;
+- Subqueries;
+- Window functions;
+- Boas práticas.
